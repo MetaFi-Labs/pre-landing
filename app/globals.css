@@ -120,3 +120,46 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translate3d(0, -12px, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, 16px, 0) scale(1.02);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(-18px, 0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(18px, 0, 0) rotate(2deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: floaty 18s ease-in-out infinite;
+  }
+
+  .animate-drift {
+    animation: drift 24s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 6s ease-in-out infinite;
+  }
+}
