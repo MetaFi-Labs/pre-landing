@@ -3,7 +3,7 @@ export default function Home() {
     <main className="flex min-h-screen items-center justify-center px-6 py-12 text-black sm:px-10 lg:px-16">
       <div className="w-full max-w-4xl border-4 border-black bg-white p-12">
         <div className="border-b-4 border-black pb-8">
-          <h1 className="font-display text-[clamp(2.75rem,7vw,5.5rem)] italic tracking-tight">
+          <h1 className="font-display text-[clamp(3.25rem,10vw,5.5rem)] italic tracking-tight sm:text-[clamp(2.75rem,7vw,5.5rem)]">
             Generic Money
           </h1>
           <p className="mt-2 text-lg">
