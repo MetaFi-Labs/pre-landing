@@ -3,9 +3,9 @@ import { displayFont, geistMono, geistSans } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Generic Money • $gmUSD",
+  title: "Generic Money • GUSD",
   description:
-    "Generic Money, very soon in your trusted wallet. A liquid-glass teaser for the gmUSD stablecoin.",
+    "Generic Money, very soon in your trusted wallet. A liquid-glass teaser for the GUSD token.",
 };
 
 export default function RootLayout({
