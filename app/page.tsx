@@ -12,7 +12,7 @@ const heroStats = [
   },
   {
     value: "Native yield",
-    label: "Morpho • Aave • Sky strategies refill the buffer",
+    label: "Morpho • Sky strategies refill the buffer",
   },
 ];
 
@@ -46,32 +46,27 @@ const solutionPillars = [
       "Canonical accounting happens on Ethereum while rollups mirror balances through LayerZero messaging.",
   },
   {
-    title: "Cross-chain coherent",
+    title: "Cross-chain in sync",
     description:
-      "Mint and redeem flows stay synchronized across networks, keeping total supply consistent everywhere.",
+      "Mint and redeem flows stay synchronized across networks, keeping total supply aligned everywhere.",
   },
   {
     title: "Real yield",
     description:
-      "Collateral deploys into vetted L1 strategies (Morpho, Aave, Sky) to generate sustainable native yield.",
+      "Collateral deploys into vetted L1 strategies (Morpho and Sky) to generate sustainable native yield.",
   },
 ];
 
 const liquidityFlow = [
   {
-    title: "Mint",
+    title: "Mint & Mirror",
     description:
-      "Users deposit USDC, USDT, or USDS on Ethereum. ERC-4626 vaults mint matched GUSD and mirror balances to rollups via LayerZero.",
+      "Users deposit USDC, USDT, or USDS on Ethereum. Vaults mint matched GUSD and LayerZero mirrors balances to every supported rollup.",
   },
   {
-    title: "Earn",
+    title: "Yield & Redeem",
     description:
-      "Collateral is deployed into whitelisted strategies. Yield first restores the buffer, then expands supply to rollups.",
-  },
-  {
-    title: "Redeem",
-    description:
-      "GUSD is redeemable for the basket's Redemption Value — always ≤ $1 — creating a floor backed by real assets.",
+      "Collateral strategies refill the buffer, then stream fresh GUSD to ecosystems. Holders can always redeem against the basket's Redemption Value (≤ $1).",
   },
 ];
 
@@ -79,7 +74,7 @@ const mechanics = [
   {
     title: "Peg + Collateral Architecture",
     bullets: [
-      "Every GUSD tracks the basket's Redemption Value — always redeemable for ≤ $1.",
+      "Every GUSD tracks the basket's Redemption Value and stays redeemable for ≤ $1.",
       "Dedicated buffer plus asset caps (~45-50%) keep exposure balanced across vaults.",
       "Steakhouse Financial executes moves within pre-approved strategy rails.",
     ],
@@ -89,7 +84,7 @@ const mechanics = [
     bullets: [
       "Yield refills the buffer, then mints new GUSD that streams to rollups by supply share.",
       "A 10% protocol rake supports the treasury while all flows remain verifiable onchain.",
-      "Mirror balances on rollups stay coherent through LayerZero settlement messages.",
+      "Mirror balances on rollups stay synchronized through LayerZero settlement messages.",
     ],
   },
 ];
@@ -98,7 +93,7 @@ const riskControls = [
   "Audited contracts with reviews by Spearbit and additional firms.",
   "Hard exposure caps per vault limit systemic collateral risk.",
   "Canonical supply originates on L1 with mirrored balances on rollups.",
-  "Daily coherence checks ensure bridged and canonical supplies match.",
+  "Daily sync checks ensure bridged and canonical supplies match.",
   "A first-loss buffer absorbs volatility before it reaches users.",
 ];
 
@@ -113,39 +108,39 @@ const transparencyHighlights = [
   "Live dashboards for supply, collateral composition, and Redemption Value.",
   "Buffer size and oracle health reporting.",
   "Strategy performance and rollup-level yield distribution feeds.",
-  "Every datapoint verifiable onchain — no opaque accounting.",
+  "Every datapoint is verifiable onchain with no opaque accounting.",
 ];
 
 const roadmap = [
   {
-    phase: "v1.0 — Launch (Audit Phase, Spearbit)",
+    phase: "v1.0: Launch (Audit Phase, Spearbit)",
     items: [
       "Canonical issuance on Ethereum with LayerZero-powered representations.",
       "Yield aggregation engine with protected collateral buffer.",
     ],
   },
   {
-    phase: "v1.1 — Transparency & Usability",
+    phase: "v1.1: Transparency & Usability",
     items: [
       "Real-time dashboards for every risk primitive.",
       "Gas-aware routing to optimize mints and redemptions.",
     ],
   },
   {
-    phase: "v1.2 — Capital Efficiency",
+    phase: "v1.2: Capital Efficiency",
     items: [
       "Time-weighted yield distribution to smooth emissions.",
       "Mint proxies on rollups for near-native UX.",
     ],
   },
   {
-    phase: "v2.0 — Automation",
+    phase: "v2.0: Automation",
     items: [
       "Onchain rebalancing and automated buffer overflow release.",
     ],
   },
   {
-    phase: "v2.x — Advanced Features",
+    phase: "v2.x: Advanced Features",
     items: [
       "Direct issuer lanes to accelerate re-pegs.",
       "L2-native minting pathways and intent-based router integrations (CoW, Anoma).",
@@ -157,17 +152,12 @@ const impacts = [
   {
     title: "For Users",
     description:
-      "A predictable stablecoin that works the same way on every network — one balance, everywhere.",
+      "A predictable stablecoin that works the same way on every network, delivering one balance everywhere.",
   },
   {
-    title: "For Rollups",
+    title: "For Networks & DeFi",
     description:
-      "Unified liquidity, materially lower incentive budgets, and the ability to recycle real yield into growth.",
-  },
-  {
-    title: "For DeFi",
-    description:
-      "A canonical USD standard that restores composability and simplifies quoting pairs across the stack.",
+      "Unified liquidity, materially lower incentives, and a canonical quote asset that restores composability across rollups and protocols.",
   },
 ];
 
@@ -187,7 +177,7 @@ export default function Home() {
           <div className="relative z-10 flex flex-col">
             <span className="section-kicker badge-rise">Generic USD (GUSD)</span>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
-              The unified stablecoin powering efficient liquidity across Ethereum and rollups.
+              One stablecoin. Unified Ethereum liquidity.
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
               GUSD is a fully collateralized USD that unifies liquidity across Ethereum and rollups so capital stays efficient
@@ -195,14 +185,9 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
               <Link
-                href="#waitlist"
-                className="group inline-flex items-center justify-center rounded-full bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_24px_68px_rgba(63,121,255,0.32)] transition hover:bg-[#3566d9]"
-              >
-                <span>Join the Waitlist</span>
-                <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
-                href="#whitepaper"
+                href="https://generic.money/whitepaper.pdf"
+                target="_blank"
+                rel="noreferrer"
                 className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
               >
                 <span>Read the Whitepaper</span>
@@ -270,14 +255,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-8 space-y-3 text-sm text-[#393B40]">
-                  <p>Canonical supply lives on Ethereum with coherence checks mirrored to every rollup.</p>
+                  <p>Canonical supply lives on Ethereum with daily sync checks mirrored to every rollup.</p>
                   <p>Collateral yield mints new GUSD that streams to partner ecosystems and treasury.</p>
                 </div>
 
                 <div className="mt-8 grid gap-3">
                   <div className="flex items-center justify-between rounded-2xl border border-white/40 bg-white/70 px-4 py-3 text-xs uppercase tracking-[0.24em] text-[#3F79FF]">
                     <span>LayerZero settlement</span>
-                    <span>↺ Coherent supply</span>
+                    <span>↺ Synced supply</span>
                   </div>
                   <div className="flex items-center justify-between rounded-2xl border border-[#3F79FF]/30 bg-[#3F79FF]/10 px-4 py-3 text-xs uppercase tracking-[0.24em] text-[#0A0B0D]">
                     <span>Real-yield vaults</span>
@@ -287,11 +272,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="floating-chip hero-stage-chip inline-flex items-center gap-3 rounded-full border border-[#3F79FF]/40 bg-white/80 px-4 py-2 text-sm text-[#0A0B0D] backdrop-blur">
+            <div className="floating-chip hero-stage-chip inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/80 px-3 py-1.5 text-sm text-[#0A0B0D] backdrop-blur">
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F79FF]/15 text-xs font-semibold text-[#3F79FF]">
                 ¤
               </span>
-              Daily coherence check
+              Daily sync check
             </div>
           </div>
         </div>
@@ -315,8 +300,8 @@ export default function Home() {
             <span className="section-kicker">1. The Problem</span>
             <h2 className="section-heading">Fragmented liquidity is bleeding DeFi dry</h2>
             <p className="mt-5 text-base text-[#393B40] sm:text-lg">
-              Stablecoins live in endless wrappers — USDC, bridged USDC.e, USDT, DAI — each with its own liquidity. The spread
-              bleeds incentives, weakens depth, and muddies UX across the stack.
+              Stablecoins live in endless wrappers like USDC, bridged USDC.e, USDT, and DAI, each with its own liquidity. The
+              spread bleeds incentives, weakens depth, and muddies UX across the stack.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -370,7 +355,7 @@ export default function Home() {
               <span className="section-kicker">3. How it works</span>
               <h2 className="section-heading">Liquidity flows that stay perfectly in sync</h2>
               <p className="mt-4 text-lg text-[#393B40]">
-                Canonical accounting on Ethereum keeps every rollup coherent. Mint, earn, and redeem cycles move in lockstep so
+                Canonical accounting on Ethereum keeps every rollup aligned. Mint, earn, and redeem cycles move in lockstep so
                 that the circulating supply mirrors real collateral at every moment.
               </p>
               <div className="mt-10 space-y-6">
@@ -388,17 +373,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2">
               {mechanics.map((block) => (
                 <div
                   key={block.title}
-                  className="col-span-1 flex flex-col rounded-3xl border border-black/[0.06] bg-white/85 p-6 shadow-[0_32px_90px_rgba(15,23,42,0.05)]"
+                  className="col-span-1 rounded-[2rem] border border-[#D4D6DC]/70 bg-white px-6 py-5 shadow-[0_28px_80px_rgba(15,23,42,0.05)]"
                 >
                   <h3 className="font-display text-xl text-[#0A0B0D]">{block.title}</h3>
-                  <ul className="mt-4 space-y-3 text-sm text-[#393B40]">
+                  <ul className="mt-3 space-y-2.5 text-sm text-[#393B40]">
                     {block.bullets.map((item) => (
                       <li key={item} className="flex gap-3">
-                        <span className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-[#3F79FF]" />
+                        <span className="mt-0.5 inline-flex h-2 w-2 flex-none rounded-full bg-[#3F79FF]" />
                         <span>{item}</span>
                       </li>
                     ))}
