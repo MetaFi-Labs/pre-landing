@@ -3,9 +3,9 @@ import { displayFont, geistMono, geistSans } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Generic Money • GUSD",
+  title: "Generic USD • Unified Liquidity for Ethereum",
   description:
-    "Generic Money, very soon in your trusted wallet. A liquid-glass teaser for the GUSD token.",
+    "GUSD is the fully collateralized, real-yield stablecoin unifying liquidity across Ethereum and its rollups.",
 };
 
 export default function RootLayout({
