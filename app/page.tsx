@@ -175,14 +175,14 @@ export default function Home() {
 
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="relative z-10 flex flex-col">
-            <div className="mb-8 flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="mb-8 flex w-full flex-wrap items-center justify-center gap-3 sm:gap-4">
               <Image
                 src="/full-logo-black.svg"
                 alt="Generic logo"
-                width={220}
-                height={64}
+                width={320}
+                height={90}
                 priority
-                className="h-10 w-auto sm:h-12"
+                className="h-12 w-auto sm:h-14"
               />
               <span className="section-kicker badge-rise">Generic USD (GUSD)</span>
             </div>
