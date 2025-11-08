@@ -175,7 +175,17 @@ export default function Home() {
 
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="relative z-10 flex flex-col">
-            <span className="section-kicker badge-rise">Generic USD (GUSD)</span>
+            <div className="mb-8 flex flex-wrap items-center gap-3 sm:gap-4">
+              <Image
+                src="/full-logo-black.svg"
+                alt="Generic logo"
+                width={220}
+                height={64}
+                priority
+                className="h-10 w-auto sm:h-12"
+              />
+              <span className="section-kicker badge-rise">Generic USD (GUSD)</span>
+            </div>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
               One stablecoin. Unified Ethereum liquidity.
             </h1>
