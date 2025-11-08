@@ -77,27 +77,19 @@ const liquidityFlow = [
 
 const mechanics = [
   {
-    title: "Peg Stability",
+    title: "Peg + Collateral Architecture",
     bullets: [
-      "Each GUSD can be redeemed for the basket's Redemption Value (RV).",
-      "RV = min(basket value / supply, 1.00), guaranteeing ≤ $1 redemptions.",
-      "A dedicated buffer keeps RV at $1 through regular market volatility.",
+      "Every GUSD tracks the basket's Redemption Value — always redeemable for ≤ $1.",
+      "Dedicated buffer plus asset caps (~45-50%) keep exposure balanced across vaults.",
+      "Steakhouse Financial executes moves within pre-approved strategy rails.",
     ],
   },
   {
-    title: "Collateral Vaults",
+    title: "Yield & Distribution Loop",
     bullets: [
-      "ERC-4626 vaults per asset with ~45-50% caps to control stablecoin exposure.",
-      "Vaults allocate to pre-approved strategies such as Morpho, Aave, and Sky.",
-      "Steakhouse Financial stewards deployments under restricted authority.",
-    ],
-  },
-  {
-    title: "Yield Distribution",
-    bullets: [
-      "Yield replenishes the collateral buffer first to defend the peg.",
-      "Fresh GUSD then streams to rollups based on supply share plus a 10% treasury fee.",
-      "All flows are onchain and auditable in real time.",
+      "Yield refills the buffer, then mints new GUSD that streams to rollups by supply share.",
+      "A 10% protocol rake supports the treasury while all flows remain verifiable onchain.",
+      "Mirror balances on rollups stay coherent through LayerZero settlement messages.",
     ],
   },
 ];
@@ -396,7 +388,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2">
               {mechanics.map((block) => (
                 <div
                   key={block.title}
@@ -470,10 +462,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <span className="section-kicker">6. Roadmap</span>
           <h2 className="section-heading">Shipping toward a canonical standard</h2>
-          <div className="mt-12 space-y-12 border-l border-[#C8C9CC] pl-8">
+          <div className="mt-12 space-y-12 border-l border-[#C8C9CC]">
             {roadmap.map((stage, index) => (
-              <div key={stage.phase} className="relative">
-                <span className="absolute -left-[1.6rem] top-1 flex h-8 w-8 items-center justify-center rounded-full border border-[#3F79FF]/40 bg-white text-sm font-semibold text-[#3F79FF]">
+              <div key={stage.phase} className="relative pl-12">
+                <span className="absolute left-0 top-0 -translate-x-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-[#3F79FF]/40 bg-white text-sm font-semibold text-[#3F79FF]">
                   {index + 1}
                 </span>
                 <h3 className="font-display text-xl text-[#0A0B0D]">{stage.phase}</h3>
