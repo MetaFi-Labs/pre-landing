@@ -4,37 +4,33 @@ import Link from "next/link";
 const heroStats = [
   {
     value: "≤ 40 bps",
-    label: "slippage recaptured across L2 <> L2 swaps",
+    label: "slippage recaptured on cross-rollup swaps",
   },
   {
     value: "$1.00",
-    label: "Redemption Value ceiling — always fully collateralized",
+    label: "Redemption Value ceiling, fully collateralized",
   },
   {
     value: "Native yield",
-    label: "Morpho • Aave • Sky deployments feed the buffer",
+    label: "Morpho • Aave • Sky strategies refill the buffer",
   },
 ];
 
-const marqueePhrases = [
-  "Canonical USD", "Cross-rollup coherence", "LayerZero settlement", "Real yield distribution", "Collateral buffer", "Steakhouse managed", "Audit by Spearbit",
+const dividerPhrases = [
+  "LayerZero settlement",
+  "Real-yield distribution",
+  "Collateral buffer",
+  "Steakhouse managed",
 ];
 
 const problemPoints = [
   {
     title: "Capital dilution",
-    description:
-      "Swaps between \"stable\" tokens can slip up to 40 bps during off-peak hours, burning capital on every bridge hop.",
-  },
-  {
-    title: "Budget drain",
-    description:
-      "L2s spend millions each year on token emissions just to keep fragmented pools attractive.",
+    description: "Bridged wrappers and thin pools slip as much as 40 bps when liquidity fragments across rollups.",
   },
   {
     title: "Yield isolation",
-    description:
-      "Rollup TVL is trapped away from mainnet yields, surviving on incentives instead of real earnings.",
+    description: "Rollup TVL sits idle on emissions instead of tapping the real yield secured on Ethereum mainnet.",
   },
 ];
 
@@ -201,9 +197,9 @@ export default function Home() {
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
               The unified stablecoin powering efficient liquidity across Ethereum and rollups.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-[#393B40] sm:text-xl">
-              GUSD is a fully collateralized, real-yield USD token that consolidates fragmented liquidity across networks,
-              enhancing stability and capital efficiency while generating native yield.
+            <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
+              GUSD is a fully collateralized USD that unifies liquidity across Ethereum and rollups so capital stays efficient
+              while earning native yield.
             </p>
             <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
               <Link
@@ -309,12 +305,12 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="relative isolate overflow-hidden border-y border-black/5 bg-white/70 py-6">
-        <div className="marquee-track">
-          {marqueePhrases.concat(marqueePhrases).map((phrase, index) => (
-            <span key={`${phrase}-${index}`} className="marquee-item">
+      <div className="hero-divider">
+        <div className="hero-divider-track">
+          {dividerPhrases.concat(dividerPhrases).map((phrase, index) => (
+            <span key={`${phrase}-${index}`} className="hero-divider-item">
+              <span className="hero-divider-icon">¤</span>
               {phrase}
-              <span className="inline-block h-1 w-1 rounded-full bg-[#0A0B0D]/30" />
             </span>
           ))}
         </div>
@@ -326,10 +322,9 @@ export default function Home() {
           <div>
             <span className="section-kicker">1. The Problem</span>
             <h2 className="section-heading">Fragmented liquidity is bleeding DeFi dry</h2>
-            <p className="mt-5 text-lg text-[#393B40]">
-              Stablecoins live in dozens of siloed wrappers — USDC, bridged USDC.e, USDT, DAI — each with distinct risk and
-              liquidity profiles. Fragmented liquidity means wasted emissions, shallow depth, and inconsistent UX across the
-              stack.
+            <p className="mt-5 text-base text-[#393B40] sm:text-lg">
+              Stablecoins live in endless wrappers — USDC, bridged USDC.e, USDT, DAI — each with its own liquidity. The spread
+              bleeds incentives, weakens depth, and muddies UX across the stack.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
