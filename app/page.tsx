@@ -11,16 +11,17 @@ type TrustSignal = {
 
 const heroStats = [
   {
-    value: "24h attestations",
-    label: "Independent reconciliations filed to the data room",
+    value: "Onchain attestations; full transparency",
+    label: "Generic only uses onchain strategies, all our backings are transparent to users and clients",
   },
   {
-    value: "$1.00 redemption",
+    value: "1:1 redemptions",
     label: "Fully collateralized ERC-4626 vaults with exposure limits",
   },
   {
-    value: "Controls logged",
-    label: "Spearbit & Steakhouse actions timestamped for review",
+    value: "Security First",
+    label:
+      "We only work with the best industry. Steakhouse is our curator and risk manager, audited by Spearbit.",
   },
 ];
 
@@ -172,7 +173,7 @@ export default function Home() {
               </span>
             </div>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
-              Institutional USD rails with verification by default.
+              The base yield for networks and protocols
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
               GUSD connects Ethereum collateral to rollup liquidity with documented controls, pre-approved strategies, and
@@ -185,14 +186,14 @@ export default function Home() {
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
               >
-                <span>Download the program brief</span>
+                <span>Read the white paper</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="mailto:partnerships@generic.money"
                 className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
               >
-                <span>Request a compliance review</span>
+                <span>Proof of Reserves</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </div>
