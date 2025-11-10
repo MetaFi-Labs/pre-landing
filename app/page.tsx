@@ -187,20 +187,28 @@ export default function Home() {
               <span className="section-kicker badge-rise hero-brand__chip">Generic USD (GUSD)</span>
             </div>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
-              One stablecoin. Unified Ethereum liquidity.
+              <span className="block">One stablecoin.</span>
+              <span className="block">Your chain&apos;s base yield.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
-              GUSD is a fully collateralized USD that unifies liquidity across Ethereum and rollups so capital stays efficient
-              while earning native yield.
+              Give builders on your network a canonical, fully collateralized dollar that recycles Ethereum-native yield back
+              into your ecosystem and deepens liquidity from day one.
             </p>
             <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
+              <Link
+                href="mailto:partnerships@generic.money"
+                className="group inline-flex items-center justify-center rounded-full bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
+              >
+                <span>Talk to our team</span>
+                <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
               <Link
                 href="https://generic.money/whitepaper.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
               >
-                <span>Read the Whitepaper</span>
+                <span>Read the whitepaper</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </div>
