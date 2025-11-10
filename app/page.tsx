@@ -175,16 +175,16 @@ export default function Home() {
 
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="relative z-10 flex flex-col">
-            <div className="mb-8 flex w-full flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="hero-brand mb-8">
               <Image
                 src="/full-logo-black.svg"
                 alt="Generic logo"
-                width={320}
-                height={90}
+                width={496}
+                height={132}
                 priority
-                className="h-12 w-auto sm:h-14"
+                className="hero-brand__logo"
               />
-              <span className="section-kicker badge-rise">Generic USD (GUSD)</span>
+              <span className="section-kicker badge-rise hero-brand__chip">Generic USD (GUSD)</span>
             </div>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
               One stablecoin. Unified Ethereum liquidity.
@@ -203,6 +203,33 @@ export default function Home() {
                 <span>Read the Whitepaper</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
+            </div>
+
+            <div className="trust-strip" aria-label="Audit updates and ecosystem partners">
+              <div className="trust-strip__summary">
+                <span className="trust-strip__label">Independent Oversight</span>
+                <p className="trust-strip__quote">
+                  “The architecture meaningfully simplifies cross-rollup liquidity.”
+                  <span className="trust-strip__quote-source">— Spearbit preliminary review</span>
+                </p>
+              </div>
+              <div className="trust-strip__items">
+                <div className="trust-strip__item">
+                  <div className="trust-strip__logo">
+                    <Image src="/brand-mark.svg" alt="Spearbit audit in progress" width={40} height={40} />
+                  </div>
+                  <div className="trust-strip__meta">
+                    <span className="trust-strip__meta-label">Security Audit</span>
+                    <span className="trust-strip__meta-value">Spearbit (in progress)</span>
+                  </div>
+                </div>
+                <div className="trust-strip__item trust-strip__item--placeholder">
+                  <div className="trust-strip__meta">
+                    <span className="trust-strip__meta-label">Ecosystem Partner</span>
+                    <span className="trust-strip__meta-value">Announcement pending final approvals</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="mt-12 grid gap-4 sm:grid-cols-3">
@@ -531,8 +558,8 @@ export default function Home() {
       <footer className="relative isolate px-6 pb-16 pt-12 sm:px-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-[#393B40] sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3 text-[#0A0B0D]">
-            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E0EAFF] text-lg font-semibold text-[#3F79FF]">
-              ¤
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E0EAFF]">
+              <Image src="/brand-mark.svg" alt="Generic mark" width={36} height={36} />
             </span>
             <div>
               <p className="font-display text-base">Generic</p>
