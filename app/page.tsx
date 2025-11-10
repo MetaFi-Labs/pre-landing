@@ -1,3 +1,4 @@
+import { ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,42 +12,59 @@ type TrustSignal = {
 
 const heroStats = [
   {
-    value: "24h attestations",
-    label: "Independent reconciliations filed to the data room",
+    value: "Onchain attestations; full transparency",
+    label: "Generic only uses onchain strategies, all our backings are transparent to users and clients",
   },
   {
-    value: "$1.00 redemption",
+    value: "1:1 redemptions",
     label: "Fully collateralized ERC-4626 vaults with exposure limits",
   },
   {
-    value: "Controls logged",
-    label: "Spearbit & Steakhouse actions timestamped for review",
+    value: "Security First",
+    label:
+      "We only work with the best industry. Steakhouse is our curator and risk manager, audited by Spearbit.",
   },
 ];
 
 const dividerPhrases = [
+  "Transparency Report",
   "Policy-aligned liquidity",
-  "Independent attestations",
-  "LayerZero settlement",
-  "Documented remediation",
+  "Transparent and Independent attestations",
+  "LayerZero fast settlement",
+  "Native trustless settlement",
+  "Documented and open operations",
+];
+
+const settlementHighlights = [
+  {
+    primary: "LayerZero and native settlement",
+    secondary: "↺ Synced supply",
+    variant: "light" as const,
+  },
+  {
+    primary: "Real yield prime vaults",
+    variant: "accent" as const,
+  },
 ];
 
 const trustSignals: TrustSignal[] = [
   {
-    label: "Security review",
-    value: "Spearbit (fieldwork)",
+    label: "Security Audit",
+    value: "Spearbit",
     logoSrc: "/brand-mark.svg",
     logoAlt: "Spearbit audit badge",
   },
   {
-    label: "Program administrator",
+    label: "Vault & Risk Manager",
     value: "Steakhouse Financial",
-    logoText: "SF",
+    logoSrc: "/steakhouse-icon.svg",
+    logoAlt: "Steakhouse Financial icon",
   },
   {
-    label: "Messaging layer",
-    value: "LayerZero verified settlement",
-    logoText: "L0",
+    label: "Messaging Layer",
+    value: "LayerZero",
+    logoSrc: "/layerzero-icon.svg",
+    logoAlt: "LayerZero icon",
   },
 ];
 
@@ -172,7 +190,7 @@ export default function Home() {
               </span>
             </div>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
-              Institutional USD rails with verification by default.
+              The base yield for networks and protocols
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
               GUSD connects Ethereum collateral to rollup liquidity with documented controls, pre-approved strategies, and
@@ -185,14 +203,14 @@ export default function Home() {
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
               >
-                <span>Download the program brief</span>
+                <span>Read the white paper</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="mailto:partnerships@generic.money"
                 className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
               >
-                <span>Request a compliance review</span>
+                <span>Proof of Reserves</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </div>
@@ -241,7 +259,7 @@ export default function Home() {
 
               <div className="glass-card hero-stage-card overflow-hidden rounded-[2.4rem] p-8">
                 <div className="flex items-center justify-between text-sm text-[#6D6F76]">
-                  <span>Audit programme</span>
+                  <span>In Audits</span>
                   <span className="inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/70 px-3 py-1 text-xs font-medium text-[#3F79FF]">
                     Spearbit
                   </span>
@@ -253,24 +271,31 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <p className="text-[0.7rem] uppercase tracking-[0.3em] text-[#6D6F76]">Attested operations</p>
+                    <p className="text-[0.7rem] uppercase tracking-[0.3em] text-[#6D6F76]">Transparent Operation</p>
                     <p className="mt-1 font-display text-xl text-[#0A0B0D]">One balance, all networks.</p>
                   </div>
                 </div>
                 <div className="mt-8 space-y-3 text-sm text-[#393B40]">
-                  <p>Canonical supply lives on Ethereum while mirrored balances post attestations every 24 hours.</p>
+                  <p>Canonical supply lives on Ethereum while mirrored balances only get minted through this backed assets.</p>
                   <p>Collateral yield refills program buffers before streaming to ecosystems and treasury.</p>
                 </div>
 
                 <div className="mt-8 grid gap-3">
-                  <div className="flex items-center justify-between rounded-2xl border border-white/40 bg-white/70 px-4 py-3 text-xs uppercase tracking-[0.24em] text-[#3F79FF]">
-                    <span>LayerZero settlement</span>
-                    <span>↺ Synced supply</span>
-                  </div>
-                  <div className="flex items-center justify-between rounded-2xl border border-[#3F79FF]/30 bg-[#3F79FF]/10 px-4 py-3 text-xs uppercase tracking-[0.24em] text-[#0A0B0D]">
-                    <span>Real-yield vaults</span>
-                    <span>α = 10% treasury</span>
-                  </div>
+                  {settlementHighlights.map((highlight) => (
+                    <div
+                      key={highlight.primary}
+                      className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-xs uppercase tracking-[0.24em] ${
+                        highlight.variant === "accent"
+                          ? "border-[#3F79FF]/30 bg-[#3F79FF]/10 text-[#0A0B0D]"
+                          : "border-white/40 bg-white/70 text-[#3F79FF]"
+                      }`}
+                    >
+                      <span>{highlight.primary}</span>
+                      {highlight.secondary ? (
+                        <span>{highlight.secondary}</span>
+                      ) : null}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -289,7 +314,9 @@ export default function Home() {
         <div className="hero-divider-track">
           {dividerPhrases.concat(dividerPhrases).map((phrase, index) => (
             <span key={`${phrase}-${index}`} className="hero-divider-item">
-              <span className="hero-divider-icon">¤</span>
+              <span className="hero-divider-icon" aria-hidden>
+                <ShieldCheck className="h-3.5 w-3.5" />
+              </span>
               {phrase}
             </span>
           ))}
@@ -299,7 +326,7 @@ export default function Home() {
       <section className="relative isolate px-6 py-20 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
-            <span className="section-kicker">Trust strip</span>
+            <span className="section-kicker">Transparent Security</span>
             <h2 className="section-heading">Independent partners validate the programme</h2>
             <p className="mt-4 text-base text-[#393B40] sm:text-lg">
               Oversight partners are disclosed up front so risk, legal, and engineering teams understand who operates each
@@ -309,10 +336,9 @@ export default function Home() {
 
           <div className="trust-strip trust-strip--standalone mt-10" aria-label="Oversight and infrastructure partners">
             <div className="trust-strip__summary">
-              <span className="trust-strip__label">Oversight in progress</span>
+              <span className="trust-strip__label">Security by top players</span>
               <p className="trust-strip__quote">
                 “Controls-first architecture for cross-chain USD.”
-                <span className="trust-strip__quote-source">— Spearbit preliminary review</span>
               </p>
             </div>
             <div className="trust-strip__items">
@@ -338,8 +364,8 @@ export default function Home() {
 
       <section className="relative isolate border-y border-black/5 bg-diagonal-fade px-6 py-24 sm:px-10">
         <div className="mx-auto max-w-6xl">
-          <span className="section-kicker">Narrative</span>
-          <h2 className="section-heading">A compliance-forward path from onboarding to live liquidity</h2>
+          <span className="section-kicker">Yours</span>
+          <h2 className="section-heading">Your whitelabel stablecoin made easy</h2>
           <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
             GUSD is structured so legal, risk, and product teams can agree on a single lifecycle. Each step is auditable,
             codified, and synchronized across every supported chain.
