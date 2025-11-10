@@ -175,34 +175,69 @@ export default function Home() {
 
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="relative z-10 flex flex-col">
-            <div className="mb-8 flex w-full flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="hero-brand mb-8">
               <Image
                 src="/full-logo-black.svg"
                 alt="Generic logo"
-                width={320}
-                height={90}
+                width={496}
+                height={132}
                 priority
-                className="h-12 w-auto sm:h-14"
+                className="hero-brand__logo"
               />
-              <span className="section-kicker badge-rise">Generic USD (GUSD)</span>
+              <span className="section-kicker badge-rise hero-brand__chip">Generic USD (GUSD)</span>
             </div>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
-              One stablecoin. Unified Ethereum liquidity.
+              <span className="block">One stablecoin.</span>
+              <span className="block">Your chain&apos;s base yield.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
-              GUSD is a fully collateralized USD that unifies liquidity across Ethereum and rollups so capital stays efficient
-              while earning native yield.
+              Give builders on your network a canonical, fully collateralized dollar that recycles Ethereum-native yield back
+              into your ecosystem and deepens liquidity from day one.
             </p>
             <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
+              <Link
+                href="mailto:partnerships@generic.money"
+                className="group inline-flex items-center justify-center rounded-full bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
+              >
+                <span>Talk to our team</span>
+                <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
               <Link
                 href="https://generic.money/whitepaper.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
               >
-                <span>Read the Whitepaper</span>
+                <span>Read the whitepaper</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
+            </div>
+
+            <div className="trust-strip" aria-label="Audit updates and ecosystem partners">
+              <div className="trust-strip__summary">
+                <span className="trust-strip__label">Independent Oversight</span>
+                <p className="trust-strip__quote">
+                  “The architecture meaningfully simplifies cross-rollup liquidity.”
+                  <span className="trust-strip__quote-source">— Spearbit preliminary review</span>
+                </p>
+              </div>
+              <div className="trust-strip__items">
+                <div className="trust-strip__item">
+                  <div className="trust-strip__logo">
+                    <Image src="/brand-mark.svg" alt="Spearbit audit in progress" width={40} height={40} />
+                  </div>
+                  <div className="trust-strip__meta">
+                    <span className="trust-strip__meta-label">Security Audit</span>
+                    <span className="trust-strip__meta-value">Spearbit (in progress)</span>
+                  </div>
+                </div>
+                <div className="trust-strip__item trust-strip__item--placeholder">
+                  <div className="trust-strip__meta">
+                    <span className="trust-strip__meta-label">Ecosystem Partner</span>
+                    <span className="trust-strip__meta-value">Announcement pending final approvals</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="mt-12 grid gap-4 sm:grid-cols-3">
@@ -531,8 +566,8 @@ export default function Home() {
       <footer className="relative isolate px-6 pb-16 pt-12 sm:px-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-[#393B40] sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3 text-[#0A0B0D]">
-            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E0EAFF] text-lg font-semibold text-[#3F79FF]">
-              ¤
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E0EAFF]">
+              <Image src="/brand-mark.svg" alt="Generic mark" width={36} height={36} />
             </span>
             <div>
               <p className="font-display text-base">Generic</p>
