@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Generic USD • The base asset for your chain",
   description:
     "GUSD is the fully collateralized asset that brings yield and unifies liquidity for your chain",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
