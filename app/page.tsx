@@ -128,6 +128,13 @@ const proofColumns = [
   },
 ];
 
+const proofMetrics = [
+  {
+    value: "Native yield",
+    label: "Consistently higher returns than T Bills",
+  },
+];
+
 const faqs = [
   {
     question: "What makes GUSD different from bridged stablecoins?",
