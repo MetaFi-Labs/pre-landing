@@ -424,15 +424,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-between gap-10">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {proofMetrics.map((metric) => (
-                <div key={metric.value} className="proof-metric">
-                  <p className="proof-metric__value">{metric.value}</p>
-                  <p className="proof-metric__label">{metric.label}</p>
-                </div>
-              ))}
-            </div>
+          <div className="flex flex-col justify-end">
             <div className="cta-panel">
               <p className="cta-panel__title">Need diligence materials?</p>
               <p className="cta-panel__description">
