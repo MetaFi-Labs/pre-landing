@@ -222,15 +222,15 @@ export default function Home() {
                   className="hero-brand__logo"
                 />
               </div>
-              <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
+              <h1 className="font-display text-[2.4rem] leading-tight text-[#0A0B0D] sm:text-[3rem] lg:text-[3.6rem]">
                 <span className="block">
                   Launch your native stablecoin, <br />
                   no issuer needed
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
-                GUSD connects Ethereum collateral to rollup liquidity with documented controls, pre-approved strategies, and
-                audit-ready reporting available on day one.
+                Generic connects Ethereum's collateral to rollup liquidity with documented controls, live strategies and
+                audited reporting.
               </p>
               <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
                 <Link
@@ -243,7 +243,9 @@ export default function Home() {
                   <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
                 </Link>
                 <Link
-                  href="mailto:partnerships@generic.money"
+                  href="https://reserves.generic.money"
+                  target="_blank"
+                  rel="noreferrer"
                   className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
                 >
                   <span>Proof of Reserves</span>
@@ -343,9 +345,9 @@ export default function Home() {
               <div className="floating-chip inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/80 px-3 py-1.5 text-sm text-[#0A0B0D] backdrop-blur">
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F79FF]/15 text-[#3F79FF]">
                   <RefreshCcw className="h-3.5 w-3.5" aria-hidden />
-                  <span className="sr-only">Daily reconciliation</span>
+                  <span className="sr-only">Real-time reserves</span>
                 </span>
-                Daily reconciliation
+                Real-time reserves
               </div>
             </div>
           </div>
