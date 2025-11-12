@@ -207,11 +207,11 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-4 sm:[grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))] sm:gap-6 lg:gap-8">
+            <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6 lg:gap-8">
               {heroStats.map((stat) => (
                 <div
                   key={stat.value}
-                  className="rounded-3xl border border-black/[0.04] bg-white/80 p-5 sm:p-6 lg:p-7 backdrop-blur"
+                  className="h-full rounded-3xl border border-black/[0.04] bg-white/80 p-5 sm:p-6 lg:p-7 backdrop-blur"
                 >
                   <p className="font-display text-2xl text-[#3F79FF]">{stat.value}</p>
                   <p className="mt-2 text-xs uppercase tracking-[0.2em] text-[#6D6F76]">{stat.label}</p>
