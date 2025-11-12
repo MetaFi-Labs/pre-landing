@@ -551,10 +551,12 @@
     isolation: isolate;
     overflow: hidden;
     border-block: 1px solid rgba(0, 0, 0, 0.05);
-    background: rgba(255, 255, 255, 0.72);
-    padding-block: clamp(16px, 2vw, 24px);
+    background: rgba(255, 255, 255, 0.78);
+    padding-block: clamp(20px, 2.8vw, 36px);
+    padding-inline: clamp(24px, 5vw, 108px);
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   .hero-divider::before,
@@ -580,7 +582,8 @@
   .hero-divider-track {
     display: flex;
     width: max-content;
-    gap: clamp(40px, 8vw, 96px);
+    align-items: center;
+    gap: clamp(32px, 6vw, 80px);
     animation: dividerSlide 22s linear infinite;
   }
 
@@ -588,25 +591,27 @@
     @apply text-xs uppercase tracking-[0.32em] text-[#0A0B0D]/70;
     display: inline-flex;
     align-items: center;
-    gap: 0.9rem;
-    letter-spacing: 0.32em;
-    font-size: 0.72rem;
-    transform-style: preserve-3d;
-    animation: dividerTilt 4s ease-in-out infinite;
+    gap: clamp(0.35rem, 0.8vw, 0.85rem);
+    padding: 0;
+    letter-spacing: 0.26em;
+    font-size: 0.7rem;
+    line-height: 1.35;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .hero-divider-icon {
     display: inline-flex;
-    height: 1.75rem;
-    width: 1.75rem;
+    height: 1.9rem;
+    width: 1.9rem;
     align-items: center;
     justify-content: center;
     border-radius: 999px;
-    background: rgba(63, 121, 255, 0.12);
+    background: rgba(63, 121, 255, 0.14);
     color: #3f79ff;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    animation: dividerPulse 3.2s ease-in-out infinite;
+    box-shadow: inset 0 0 0 1px rgba(63, 121, 255, 0.1);
   }
 
   .bg-diagonal-fade {

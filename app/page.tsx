@@ -1,5 +1,17 @@
 import type { LucideIcon } from "lucide-react";
-import { CircleDollarSign, Layers, Plug, RefreshCcw, ShieldCheck } from "lucide-react";
+import {
+  BadgeCheck,
+  CircleDollarSign,
+  FileText,
+  Layers,
+  LockKeyhole,
+  NotebookText,
+  Plug,
+  RefreshCcw,
+  Scale,
+  ShieldCheck,
+  Zap,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,29 +29,52 @@ type BenefitHighlight = {
   Icon: LucideIcon;
 };
 
+type DividerItem = {
+  label: string;
+  Icon: LucideIcon;
+};
+
 const heroStats = [
   {
-    value: "Onchain attestations; full transparency",
+    value: "Fully onchain",
     label: "Generic only uses onchain strategies, all our backings are transparent to users and clients",
   },
   {
-    value: "1:1 redemptions",
+    value: "1:1",
     label: "Fully collateralized ERC-4626 vaults with exposure limits",
   },
   {
-    value: "Security First",
+    value: "Security first",
     label:
       "We only work with the best industry. Steakhouse is our curator and risk manager, audited by Spearbit.",
   },
 ];
 
-const dividerPhrases = [
-  "Transparency Report",
-  "Policy-aligned liquidity",
-  "Transparent and Independent attestations",
-  "LayerZero fast settlement",
-  "Native trustless settlement",
-  "Documented and open operations",
+const dividerItems: DividerItem[] = [
+  {
+    label: "Transparency report",
+    Icon: FileText,
+  },
+  {
+    label: "Policy-aligned liquidity",
+    Icon: Scale,
+  },
+  {
+    label: "Transparent and independent attestations",
+    Icon: BadgeCheck,
+  },
+  {
+    label: "LayerZero fast settlement",
+    Icon: Zap,
+  },
+  {
+    label: "Native trustless settlement",
+    Icon: LockKeyhole,
+  },
+  {
+    label: "Documented and open operations",
+    Icon: NotebookText,
+  },
 ];
 
 const settlementHighlights = [
@@ -62,7 +97,7 @@ const trustSignals: TrustSignal[] = [
     logoAlt: "Spearbit audit badge",
   },
   {
-    label: "Vault & Risk Manager",
+    label: "Vault Manager",
     value: "Steakhouse Financial",
     logoSrc: "/steakhouse-icon.svg",
     logoAlt: "Steakhouse Financial icon",
@@ -169,49 +204,128 @@ export default function Home() {
         <div className="hero-orb hero-orb-lg" />
         <div className="hero-orb hero-orb-sm" />
 
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_1fr]">
-          <div className="relative z-10 flex flex-col">
-            <div className="hero-brand mb-8">
-              <Image
-                src="/full-logo-black.svg"
-                alt="Generic logo"
-                width={496}
-                height={132}
-                priority
-                className="hero-brand__logo"
-              />
-              <span className="section-kicker badge-rise hero-brand__chip">
-                Generic USD (GUSD)
-              </span>
-            </div>
-            <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
-              <span className="block">Base yield token</span>
-              <span className="block">for networks and protocols</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
-              GUSD connects Ethereum collateral to rollup liquidity with documented controls, pre-approved strategies, and
-              audit-ready reporting available on day one.
-            </p>
-            <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
-              <Link
-                href="/whitepaper.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
-              >
-                <span>Read the white paper</span>
-                <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
-                href="mailto:partnerships@generic.money"
-                className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
-              >
-                <span>Proof of Reserves</span>
-                <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
-              </Link>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="relative z-10 flex flex-col">
+              <div className="hero-brand mb-8">
+                <Image
+                  src="/full-logo-black.svg"
+                  alt="Generic logo"
+                  width={496}
+                  height={132}
+                  priority
+                  className="hero-brand__logo"
+                />
+                <span className="section-kicker badge-rise hero-brand__chip">
+                  Generic USD (GUSD)
+                </span>
+              </div>
+              <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
+                <span className="block">
+                  Base yield token <br />
+                  for web3 projects
+                </span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
+                GUSD connects Ethereum collateral to rollup liquidity with documented controls, pre-approved strategies, and
+                audit-ready reporting available on day one.
+              </p>
+              <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
+                <Link
+                  href="/whitepaper.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
+                >
+                  <span>Read the white paper</span>
+                  <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+                <Link
+                  href="mailto:partnerships@generic.money"
+                  className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
+                >
+                  <span>Proof of Reserves</span>
+                  <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+              </div>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6 lg:gap-8">
+            <div className="relative z-10">
+              <div className="hero-stage">
+                <span className="hero-stage-glow" />
+                <span className="hero-stage-grid" />
+                <span className="hero-stage-beam" />
+
+                <div className="hero-stage-window">
+                  <Image
+                    src="/window.svg"
+                    alt="Generic liquidity viewport"
+                    fill
+                    sizes="(min-width: 1024px) 480px, 82vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+
+                <div className="hero-stage-token">
+                  <Image src="/brand-mark.svg" alt="Generic emblem" width={64} height={64} />
+                </div>
+
+                <div className="hero-stage-orbit">
+                  <Image src="/globe.svg" alt="Rollup footprint" width={80} height={80} />
+                </div>
+
+                <div className="hero-stage-orbit hero-stage-orbit-alt">
+                  <Image src="/file.svg" alt="Onchain audit file" width={72} height={72} />
+                </div>
+
+                <div className="glass-card hero-stage-card overflow-hidden rounded-[2.4rem] p-8">
+                  <div className="flex items-center justify-between text-sm text-[#6D6F76]">
+                    <span>In Audits</span>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/70 px-3 py-1 text-xs font-medium text-[#3F79FF]">
+                      Spearbit
+                    </span>
+                  </div>
+                  <div className="mt-8 flex items-center gap-4">
+                    <div className="relative h-16 w-16 rounded-2xl bg-[#E0EAFF]/70">
+                      <div className="absolute inset-2 flex items-center justify-center rounded-xl bg-white">
+                        <Image src="/brand-mark.svg" alt="Generic mark" width={40} height={40} />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-[0.7rem] uppercase tracking-[0.3em] text-[#6D6F76]">Transparent Operation</p>
+                      <p className="mt-1 font-display text-xl text-[#0A0B0D]">One balance, all networks.</p>
+                    </div>
+                  </div>
+                  <div className="mt-8 space-y-3 text-sm text-[#393B40]">
+                    <p>Canonical supply lives on Ethereum while mirrored balances only get minted through this backed assets.</p>
+                    <p>Collateral yield refills program buffers before streaming to ecosystems and treasury.</p>
+                  </div>
+
+                  <div className="mt-8 grid gap-3">
+                    {settlementHighlights.map((highlight) => (
+                      <div
+                        key={highlight.primary}
+                        className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-xs uppercase tracking-[0.24em] ${
+                          highlight.variant === "accent"
+                            ? "border-[#3F79FF]/30 bg-[#3F79FF]/10 text-[#0A0B0D]"
+                            : "border-white/40 bg-white/70 text-[#3F79FF]"
+                        }`}
+                      >
+                        <span>{highlight.primary}</span>
+                        {highlight.secondary ? (
+                          <span>{highlight.secondary}</span>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
+            <div className="grid flex-1 min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
               {heroStats.map((stat) => (
                 <div
                   key={stat.value}
@@ -222,86 +336,15 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
 
-          <div className="relative z-10">
-            <div className="hero-stage">
-              <span className="hero-stage-glow" />
-              <span className="hero-stage-grid" />
-              <span className="hero-stage-beam" />
-
-              <div className="hero-stage-window">
-                <Image
-                  src="/window.svg"
-                  alt="Generic liquidity viewport"
-                  fill
-                  sizes="(min-width: 1024px) 480px, 82vw"
-                  className="object-cover"
-                  priority
-                />
+            <div className="flex-none self-start pl-4 lg:pl-8">
+              <div className="floating-chip inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/80 px-3 py-1.5 text-sm text-[#0A0B0D] backdrop-blur">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F79FF]/15 text-[#3F79FF]">
+                  <RefreshCcw className="h-3.5 w-3.5" aria-hidden />
+                  <span className="sr-only">Daily reconciliation</span>
+                </span>
+                Daily reconciliation
               </div>
-
-              <div className="hero-stage-token">
-                <Image src="/brand-mark.svg" alt="Generic emblem" width={64} height={64} />
-              </div>
-
-              <div className="hero-stage-orbit">
-                <Image src="/globe.svg" alt="Rollup footprint" width={80} height={80} />
-              </div>
-
-              <div className="hero-stage-orbit hero-stage-orbit-alt">
-                <Image src="/file.svg" alt="Onchain audit file" width={72} height={72} />
-              </div>
-
-              <div className="glass-card hero-stage-card overflow-hidden rounded-[2.4rem] p-8">
-                <div className="flex items-center justify-between text-sm text-[#6D6F76]">
-                  <span>In Audits</span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/70 px-3 py-1 text-xs font-medium text-[#3F79FF]">
-                    Spearbit
-                  </span>
-                </div>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="relative h-16 w-16 rounded-2xl bg-[#E0EAFF]/70">
-                    <div className="absolute inset-2 flex items-center justify-center rounded-xl bg-white">
-                      <Image src="/brand-mark.svg" alt="Generic mark" width={40} height={40} />
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-[0.7rem] uppercase tracking-[0.3em] text-[#6D6F76]">Transparent Operation</p>
-                    <p className="mt-1 font-display text-xl text-[#0A0B0D]">One balance, all networks.</p>
-                  </div>
-                </div>
-                <div className="mt-8 space-y-3 text-sm text-[#393B40]">
-                  <p>Canonical supply lives on Ethereum while mirrored balances only get minted through this backed assets.</p>
-                  <p>Collateral yield refills program buffers before streaming to ecosystems and treasury.</p>
-                </div>
-
-                <div className="mt-8 grid gap-3">
-                  {settlementHighlights.map((highlight) => (
-                    <div
-                      key={highlight.primary}
-                      className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-xs uppercase tracking-[0.24em] ${
-                        highlight.variant === "accent"
-                          ? "border-[#3F79FF]/30 bg-[#3F79FF]/10 text-[#0A0B0D]"
-                          : "border-white/40 bg-white/70 text-[#3F79FF]"
-                      }`}
-                    >
-                      <span>{highlight.primary}</span>
-                      {highlight.secondary ? (
-                        <span>{highlight.secondary}</span>
-                      ) : null}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="floating-chip hero-stage-chip inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/80 px-3 py-1.5 text-sm text-[#0A0B0D] backdrop-blur">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F79FF]/15 text-[#3F79FF]">
-                <RefreshCcw className="h-3.5 w-3.5" aria-hidden />
-                <span className="sr-only">Daily reconciliation</span>
-              </span>
-              Daily reconciliation
             </div>
           </div>
         </div>
@@ -309,12 +352,12 @@ export default function Home() {
 
       <div className="hero-divider">
         <div className="hero-divider-track">
-          {dividerPhrases.concat(dividerPhrases).map((phrase, index) => (
-            <span key={`${phrase}-${index}`} className="hero-divider-item">
+          {dividerItems.concat(dividerItems).map((item, index) => (
+            <span key={`${item.label}-${index}`} className="hero-divider-item">
               <span className="hero-divider-icon" aria-hidden>
-                <ShieldCheck className="h-3.5 w-3.5" />
+                <item.Icon className="h-4 w-4" />
               </span>
-              {phrase}
+              {item.label}
             </span>
           ))}
         </div>
@@ -489,4 +532,3 @@ export default function Home() {
     </main>
   );
 }
-
