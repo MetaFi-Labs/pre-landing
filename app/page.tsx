@@ -329,7 +329,7 @@ export default function Home() {
             <div className="trust-strip__summary">
               <span className="trust-strip__label">Security by top players</span>
               <p className="trust-strip__quote">
-                “Controls-first architecture for cross-chain USD.”
+                Controls-first architecture for cross-chain USD.
               </p>
             </div>
             <div className="trust-strip__items">
