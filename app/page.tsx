@@ -229,7 +229,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
-                Generic connects Ethereum's collateral to rollup liquidity with documented controls, live strategies and
+                Generic connects Ethereum&apos;s collateral to rollup liquidity with documented controls, live strategies and
                 audited reporting.
               </p>
               <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
