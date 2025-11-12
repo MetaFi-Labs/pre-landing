@@ -1,4 +1,5 @@
-import { ShieldCheck } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { CircleDollarSign, Layers, Plug, RefreshCcw, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +9,12 @@ type TrustSignal = {
   logoSrc?: string;
   logoAlt?: string;
   logoText?: string;
+};
+
+type BenefitHighlight = {
+  title: string;
+  description: string;
+  Icon: LucideIcon;
 };
 
 const heroStats = [
@@ -86,26 +93,30 @@ const narrativeMilestones = [
   },
 ];
 
-const benefitHighlights = [
+const benefitHighlights: BenefitHighlight[] = [
   {
     title: "Canonical across rollups",
     description:
       "Choose your preferred messaging channel to move balances across chains securely and fast.",
+    Icon: Layers,
   },
   {
     title: "Native yield",
     description:
       "Onchain yields in prime vaults have consistently had higher yields that offchain T Bill, while keeping funds backed by safe collaterals",
+    Icon: CircleDollarSign,
   },
   {
     title: "Operational assurance",
     description:
       "Programmatic limits, change windows, and human sign-off protect every contract or policy update. From the team at Aragon that manages some of the most critical security councils in the industry",
+    Icon: ShieldCheck,
   },
   {
     title: "Integration ready",
     description:
       "Attestations, and standardized APIs make it simple for exchanges and protocols to integrate.",
+    Icon: Plug,
   },
 ];
 
@@ -125,13 +136,6 @@ const proofColumns = [
       "Audit trail with change control diffs and incident communications.",
       "10% protocol fee disclosed with treasury distribution reporting.",
     ],
-  },
-];
-
-const proofMetrics = [
-  {
-    value: "Native yield",
-    label: "Consistently higher returns than T Bills",
   },
 ];
 
@@ -292,8 +296,9 @@ export default function Home() {
             </div>
 
             <div className="floating-chip hero-stage-chip inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/80 px-3 py-1.5 text-sm text-[#0A0B0D] backdrop-blur">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F79FF]/15 text-xs font-semibold text-[#3F79FF]">
-                ¤
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F79FF]/15 text-[#3F79FF]">
+                <RefreshCcw className="h-3.5 w-3.5" aria-hidden />
+                <span className="sr-only">Daily reconciliation</span>
               </span>
               Daily reconciliation
             </div>
@@ -386,11 +391,13 @@ export default function Home() {
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {benefitHighlights.map((benefit) => (
-              <div key={benefit.title} className="benefit-card">
-                <span className="benefit-card__icon">¤</span>
-                <h3 className="benefit-card__title">{benefit.title}</h3>
-                <p className="benefit-card__description">{benefit.description}</p>
+            {benefitHighlights.map(({ title, description, Icon }) => (
+              <div key={title} className="benefit-card">
+                <span className="benefit-card__icon" aria-hidden>
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="benefit-card__title">{title}</h3>
+                <p className="benefit-card__description">{description}</p>
               </div>
             ))}
           </div>
