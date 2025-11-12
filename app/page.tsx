@@ -207,7 +207,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative z-10 flex flex-col">
-              <div className="hero-brand mb-8">
+              <div className="mb-4">
+                <span className="section-kicker badge-rise hero-brand__chip">
+                  Generic USD (GUSD)
+                </span>
+              </div>
+              <div className="hero-brand mb-6">
                 <Image
                   src="/full-logo-black.svg"
                   alt="Generic logo"
@@ -216,14 +221,11 @@ export default function Home() {
                   priority
                   className="hero-brand__logo"
                 />
-                <span className="section-kicker badge-rise hero-brand__chip">
-                  Generic USD (GUSD)
-                </span>
               </div>
               <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
                 <span className="block">
-                  Base yield token <br />
-                  for web3 projects
+                  Launch your native stablecoin, <br />
+                  no issuer needed
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
