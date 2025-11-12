@@ -181,7 +181,8 @@ export default function Home() {
               </span>
             </div>
             <h1 className="font-display text-[2.6rem] leading-tight text-[#0A0B0D] sm:text-[3.2rem] lg:text-[3.8rem]">
-              The base yield for networks and protocols
+              <span className="block">Base yield token</span>
+              <span className="block">for networks and protocols</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
               GUSD connects Ethereum collateral to rollup liquidity with documented controls, pre-approved strategies, and
