@@ -242,15 +242,6 @@ export default function Home() {
                   <span>Read the white paper</span>
                   <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
                 </Link>
-                <Link
-                  href="https://reserves.generic.money"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center justify-center rounded-full border border-[#AAACB2] bg-white/80 px-8 py-3 text-base font-medium text-[#0A0B0D] backdrop-blur transition hover:border-[#3F79FF]/60 hover:text-[#3F79FF]"
-                >
-                  <span>Proof of Reserves</span>
-                  <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
-                </Link>
               </div>
             </div>
 
